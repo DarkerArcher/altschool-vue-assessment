@@ -1,26 +1,20 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ColorPickerGame from "./components/ColorPickerGame.vue";
+import Recap_01_02_2023 from "./components/Recap_01_02_2023.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  components: { ColorPickerGame, Recap_01_02_2023 },
+  data() {
+    return {
+      currentLesson: "color-picker-game",
+    };
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<template>
+  <ColorPickerGame v-if="currentLesson === 'color-picker-game'" />
+  <Recap_01_02_2023 v-else />
+</template>
+
+<style scoped></style>
